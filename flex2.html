@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Demo</title>
+    <style>
+        body{
+            background-color:gainsboro ;
+        }
+        .container{
+            justify-content:center;
+            gap:10px;
+            display:flex;
+            flex-direction:row;
+            flex-wrap:wrap;
+            background-color:white;
+            border-radius:20px;
+        }
+        .box
+        {
+            width:200px;
+            height:200px;
+            color: black;
+            flex:1;
+            padding: 20px;
+            box-shadow:grey;
+            border-radius: 20px;
+        }
+       img{
+            width:200px;
+            height:200px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 12px rgba(129, 78, 12, 0.761);
+            flex:1;
+        }
+        p{
+            font-size: 1.2rem;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to our Restaurent!</h1>
+    <div class="container">
+        <div class="box"><img src="C:\Users\Yuvashree\Downloads\food.jpg" ></div>
+        <div class="box"><p> Panner tikka readyy!.. A wide variety of delicious and healthy vegetarian dishes are suitable for dinner,
+             ranging from quick one-pot meals to rich curries and international options.</p></div>
+    </div>
+</body>
+</html>
