@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>JavaScript Example</title>
+    <style>
+        h{
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+    </style>
+    <script>
+        function add(){
+            let a=parseInt(document.getElementById("t1").value);
+            let b=parseInt(document.getElementById("t2").value);
+            document.getElementById("t3").value=a+b;
+        }
+        function sub(){
+            let a=parseInt(document.getElementById("t1").value);
+            let b=parseInt(document.getElementById("t2").value);
+            document.getElementById("t3").value=a-b;
+        }
+        function multiply(){
+            let a=parseInt(document.getElementById("t1").value);
+            let b=parseInt(document.getElementById("t2").value);
+            document.getElementById("t3").value=a*b;
+        }
+        function divide(){
+            let a=parseInt(document.getElementById("t1").value);
+            let b=parseInt(document.getElementById("t2").value);
+            document.getElementById("t3").value=a/b;
+        }
+    </script>
+
+    </head>
+    <body>
+        <h1>Simple Calculator!</h1>
+         <table border="0" cellpadding="8" cellspacing="0">
+        <tr>
+            <td><label for="t1">Number 1:</label></td>
+            <td><input type="text" id="t1" name="t1" required></td>
+        </tr>   
+        <tr>
+            <td><label for="t2">Number 2:</label></td>
+            <td><input type="text" id="t2" name="t2" required></td>
+        </tr>  
+        <tr>
+            <td><label for="t3">Answer:</label></td>
+            <td><input type="text" id="t3" name="t3" required></td>
+        </tr>
+         <br></table><br>    
+            <tr>
+                <button onclick="add()">ADD</button>
+                <button onclick="sub()">SUB</button>        
+            </tr>
+            <tr>
+                <button onclick="mul()">MUL</button>
+                <button onclick="div()">DIV</button>
+        </table>
+
+    </body>
+</html>

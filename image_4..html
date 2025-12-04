@@ -1,0 +1,44 @@
+<script>
+    let num=0;
+    let arr=["C:\\Users\\Yuvashree\\Downloads\\rose image.jpg",
+             "C:\\Users\\Yuvashree\\Downloads\\nature2.jpg",
+             "C:\\Users\\Yuvashree\\Downloads\\nature3.jpg",
+             "C:\\Users\\Yuvashree\\Downloads\\nature4.jpg"];
+    function nextImage(){   
+        num++;
+        if(num>=arr.length){
+            num=0;
+        }
+        let img=document.getElementById("im");
+        img.src=arr[num];
+    }   
+    function prevImage(){
+        num--;
+        if(num<0){
+            num=arr.length-1;
+        }
+        let img=document.getElementById("im");
+        img.src=arr[num];
+    }
+</script>
+
+<html>
+    <head>
+        <title>Image Slider</title>
+    </head>
+    <body>
+        <h2>Image Slider Example</h2>
+        <img id="im" src="C:\\Users\\Yuvashree\\Downloads\\rose image.jpg" alt="Nature Image" width="400" height="500">
+        <br><br>
+        <button onclick="prevImage()">PREVIOUS</button>
+        <button onclick="nextImage()">NEXT</button>
+
+
+
+
+        
+    </body>
+
+
+
+</html>
