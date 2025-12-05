@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>gallery</title>
+        <script>
+            function press()
+            {
+                let b=document.getElementById("main");
+                let c=document.getElementById("l");
+                let d=document.getElementById("vt");
+                if(b.style.backgroundColor=="white")
+                {
+                    b.style.backgroundColor="black";
+                    c.innerHTML="Dark Mode";
+                    c.style.color="white";
+                    d.style.color="black";
+                    
+                }
+                else
+                {
+                    b.style.backgroundColor="white";
+                    c.innerHTML="Light Mode";
+                    c.style.color="black";
+                    d.style.color="black";
+                }
+            }
+        </script>
+        
+    </head>
+    <body style="background-color: white;" id="main">
+        <h1 id="l">Light Mode</h1>
+        <button id="vt" onclick="press()">Switch Mode</button>  
+    </body>
+    </html>

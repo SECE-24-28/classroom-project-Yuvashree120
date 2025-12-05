@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+
+    <script>
+
+        function press(){
+
+            let h=document.getElementById("h1").value;
+
+            let p=document.getElementById("yu");
+
+            let o=document.createElement("li");
+
+o.innerHTML=h;
+
+p.appendChild(o);
+  }
+
+    </script>
+
+</head>
+
+<body id="main">
+
+    <input type="text" placeholder="Enter name" id="h1"></input>
+
+    <button  onclick="press()">click me</button>
+
+     <ol id="yu"></ol>
+
+</body>
+
+</html>
