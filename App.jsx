@@ -1,26 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { DataProvider } from './DataContext'
-import One from './One'
-import Two from './Two'
-import Three from './Three'
-
-
+import { useState, useEffect } from "react";
+import "./App.css";
+import api from "./api/Stu_api";
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [SList, setSList] = useState([]);
+
+  useEffect(() => {
+    const fetData = async () => {
+      try {
+        const res = await api.get("/students");
+        setSList(res.data);
+        console.log("DATA:", res.data);
+      } catch (err) {
+        console.error("ERROR:", err);
+      }
+    };
+    fetData();
+  }, []);
 
   return (
-    <div className='outer-container'>
-    <DataProvider>
-      <One />
-      <Two /> 
-      <Three />
-    </DataProvider>
-    </div>
-  )
+    <>
+      {SList.length === 0 && <p>No data loaded</p>}
+
+      {SList.map((stu) => (
+        <p key={stu.id}>
+          {stu.sid} - {stu.sname} - {stu.mark}
+        </p>
+      ))}
+    </>
+  );
 }
 
-export default App
+export default App;
