@@ -1,35 +1,29 @@
-import { useState, useEffect } from "react";
-import "./App.css";
-import api from "./api/Stu_api";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import './App.css';
+import Home from './Home';
+import AddPost from './AddPost';
+import EditPost from './EditPost';
+import { DataProvider } from './Context/DataContext';
 
 function App() {
-
-  const [SList, setSList] = useState([]);
-
-  useEffect(() => {
-    const fetData = async () => {
-      try {
-        const res = await api.get("/students");
-        setSList(res.data);
-        console.log("DATA:", res.data);
-      } catch (err) {
-        console.error("ERROR:", err);
-      }
-    };
-    fetData();
-  }, []);
-
   return (
     <>
-      {SList.length === 0 && <p>No data loaded</p>}
+      <div className="topbar">
+        <div className="nav-right">
+          <Link to="/">Home</Link>
+          <Link to="/newpost">NewPost</Link>
+        </div>
+      </div>
 
-      {SList.map((stu) => (
-        <p key={stu.id}>
-          {stu.sid} - {stu.sname} - {stu.mark}
-        </p>
-      ))}
+      <DataProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/newpost" element={<AddPost />} />
+          <Route path="/editpost/:id" element={<EditPost />} />
+        </Routes>
+      </DataProvider>
     </>
   );
 }
 
-export default App;
+export default App;  this 
